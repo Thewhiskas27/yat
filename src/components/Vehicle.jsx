@@ -13,7 +13,7 @@ export default function Vehicle({
         <div className="vehicle-wrapper">
             <h2>{marque} {modele}</h2>
             <p><strong>Année :</strong> {annee}</p>
-            <p><strong>Couleur :</strong> {couleur} cm</p>
+            <p><strong>Couleur :</strong> {couleur}</p>
             <p><strong>Specificités :</strong> {vehicleType.join(', ')}</p>
             {klaxonner && (
                 <button onClick={() => klaxonner(klaxon)}>Son</button>

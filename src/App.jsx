@@ -33,7 +33,7 @@ class Formulaire extends React.Component {
                     <input
                         type="text"
                         value={this.vehicle.marque}
-                        onChange={(e) => this.setState({marque: e.target.value})}
+                        onChange={(e) => this.setStateg({marque: e.target.value})}
                     />
                     <input
                         type="text"
