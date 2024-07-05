@@ -18,7 +18,7 @@ class Formulaire extends React.Component {
     }
     onFormSubmit = (event) => {
         event.preventDefault()
-        this.setState({
+        this.setVehicle({
             marque: "Hello World!",
             modele: "Hello World!",
             annee: "Hello World!",
@@ -38,24 +38,24 @@ class Formulaire extends React.Component {
                     <input
                         type="text"
                         value={this.vehicle.modele}
-                        onChange={(e) => this.setState({modele: e.target.value})}
+                        onChange={(e) => this.setVehicle({modele: e.target.value})}
                     />
                     <input
                         type="text"
                         value={this.vehicle.annee}
-                        onChange={(e) => this.setState({annee: e.target.value})}
+                        onChange={(e) => this.setVehicle({annee: e.target.value})}
                     />
                     <input
                         type="text"
                         value={this.vehicle.couleur}
-                        onChange={(e) => this.setState({couleur: e.target.value})}
+                        onChange={(e) => this.setVehicle({couleur: e.target.value})}
                     />
                 </form>
                 <br/>
-                <p>Valeur saisie : {this.vehicle.marque}</p>
-                <p>Valeur saisie : {this.vehicle.modele}</p>
-                <p>Valeur saisie : {this.vehicle.annee}</p>
-                <p>Valeur saisie : {this.vehicle.couleur}</p>
+                <p>Marque : {this.vehicle.marque}</p>
+                <p>Modele : {this.vehicle.modele}</p>
+                <p>Annee : {this.vehicle.annee}</p>
+                <p>Couleur : {this.vehicle.couleur}</p>
             </div>
         )
     }
