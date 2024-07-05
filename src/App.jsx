@@ -1,12 +1,66 @@
 import data from './data'
 import Vehicle from './components/Vehicle.jsx'
 import './App.css'
+import React from 'react'
+
 function klaxonner(klaxon) {
     const alertInformation = Object.entries(klaxon)
         .map(([key, value]) => `${key}: ${value}`)
         .join('\n');
     alert(alertInformation);
 }
+class Formulaire extends React.Component {
+    vehicle = {
+        marque: '',
+        modele: '',
+        annee: '',
+        couleur: ''
+    }
+    onFormSubmit = (event) => {
+        event.preventDefault()
+        this.setState({
+            marque: "Hello World!",
+            modele: "Hello World!",
+            annee: "Hello World!",
+            couleur: "Hello World!"
+        })
+    };
+    render() {
+        return (
+            <div>
+                <form onSubmit={this.onFormSubmit}>
+                    <label> Entrez du texte </label>
+                    <input
+                        type="text"
+                        value={this.vehicle.marque}
+                        onChange={(e) => this.setState({marque: e.target.value})}
+                    />
+                    <input
+                        type="text"
+                        value={this.vehicle.modele}
+                        onChange={(e) => this.setState({modele: e.target.value})}
+                    />
+                    <input
+                        type="text"
+                        value={this.vehicle.annee}
+                        onChange={(e) => this.setState({annee: e.target.value})}
+                    />
+                    <input
+                        type="text"
+                        value={this.vehicle.couleur}
+                        onChange={(e) => this.setState({couleur: e.target.value})}
+                    />
+                </form>
+                <br/>
+                <p>Valeur saisie : {this.vehicle.marque}</p>
+                <p>Valeur saisie : {this.vehicle.modele}</p>
+                <p>Valeur saisie : {this.vehicle.annee}</p>
+                <p>Valeur saisie : {this.vehicle.couleur}</p>
+            </div>
+        )
+    }
+}
+
 function App() {
     return (
         <div className="wrapper">
@@ -23,7 +77,9 @@ function App() {
                     klaxonner={klaxonner}
                 />
             ))}
+            <Formulaire/>
         </div>
     )
 }
+
 export default App
